@@ -1,0 +1,66 @@
+/*
+ * node.h
+ *
+ *  Created on: 2016-03-09
+ *      Author: s2eghbal
+ */
+
+#ifndef NODE_H_
+#define NODE_H_
+
+#include <stdio.h>
+#include "types.h"
+
+#include <iostream>
+#include <unordered_map>
+#include <string>
+
+
+class Node {
+
+private:
+	UINT64 findchild(UINT8* code);
+
+public:
+
+	int level;
+
+	bool isleaf; // When a node is created it is initially a leaf
+
+	Node** children;
+
+	UINT64 branchfactor;
+
+	int size;
+
+	int capacity;
+
+	int B;
+
+	int B_over_8;
+
+	UINT8* codeset; // An array of the exisitng codes in the node
+
+	UINT32* indexset; // An array of current code indicies in the dataset
+
+
+	UINT32 depth; // Depth of the node
+
+	UINT8* subnorms;
+
+	std::unordered_map<std::string,double> myrecipe;
+
+	Node(int _depth,UINT8* chunk_subnorms, int B);
+
+	~Node();
+
+	void expand(); // Expand if the number nodes is more than a threshold
+
+   void insert(UINT8* _code, int _index, int B_over_8); // It should exapand if the number of nodes is more than the threshold
+
+};
+
+
+
+
+#endif /* NODE_H_ */

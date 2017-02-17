@@ -1,0 +1,22 @@
+#ifndef ROOT_NODE__
+#define ROOT_NODE__
+
+#include "node.h"
+
+class RootNode{
+private:
+	Node** children;
+	int B;
+	int B_over_8;
+public:
+
+	RootNode(int B);
+
+	~RootNode();
+
+	void insert(UINT8* code,int index);
+
+};
+
+
+#endif
