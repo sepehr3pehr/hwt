@@ -1,3 +1,3 @@
-# hwt
+# Hamming Weight Tree (HWT)
 Implementation of the Hamming Weight Tree
-The algorithm peforms fast K nearest neighbor search in Hamming space.
+HWT supports two fundumental queries in binary datasets: 1) K nearest neighbor search 2) Insertion of new binary codes
