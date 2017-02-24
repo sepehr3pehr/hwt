@@ -11,3 +11,7 @@ cmake CMakeLists.txt
 make
 ```
 This should create two executable files 1) *hwt*, for running the Hamming weight tree, and 2) *linscan* for running linear scan
+
+### Usage
+##### hwt
+hwt provides an implementaiton of the Hamming weight tree which supports fast Hamming nearest neighbor search as well as fast insertion of new items to the data strucutre
