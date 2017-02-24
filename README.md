@@ -10,3 +10,4 @@ Compiling and building the project requires cmake, make, hdf5 and hdf5-dev. To c
 cmake CMakeLists.txt
 make
 ```
+This should create two executable files 1) *hwt*, for running the Hamming weight tree, and 2) *linscan* for running linear scan
