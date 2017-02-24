@@ -1,10 +1,3 @@
-/*
- * root_node.h
- *
- *  Created on: 2016-03-09
- *      Author: s2eghbal
- */
-
 #ifndef ROOT_NODE_H_
 #define ROOT_NODE_H_
 
@@ -32,4 +25,4 @@ public:
 
 
 
-#endif /* ROOT_NODE_H_ */
+#endif

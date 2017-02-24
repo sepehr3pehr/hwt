@@ -90,6 +90,7 @@ inline int popNOTAND(UINT8*P, UINT8*Q, int codelb)
 		return output;
 	}
 }
+
 inline double dotproduct(UINT8*P, UINT8*Q, int codelb)
 {
 	switch(codelb) {

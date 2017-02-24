@@ -15,7 +15,6 @@ bool RootNode::insert(UINT8* code,Node* &curr_node) {
 
 	UINT8 norm[1];
 	norm[0] = l1norm(code,B_over_8);
-	//printf("norm = %u\n",norm[0]);
 	if(children[norm[0]]==NULL){
 		children[norm[0]] = new Node(0,norm);
 		curr_node = children[norm[0]];

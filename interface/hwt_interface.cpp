@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include "root_node.h"
-//#include "node.h"
+
 #include "io.h"
 #include <time.h>
 #include "nodeops.h"
@@ -117,22 +117,15 @@ int main(int argc, char**argv)
 	printf("Loaded\n");
 	fflush(stdout);
 
-	//RootNode root = RootNode(B);
 
 	start1 = time(NULL);
 	start0 = clock();
-	//	for(UINT32 i=0;i<N;i++)
-	//	{
-	//		if(i%500000==0)
-	//			printf("%d items are load\n",i);
-	//		root.insert(codes_db+i*B_over_8,i);
-	//	}
 	int capacity = 100;
 	Node* curr_node;
 	UINT8* ccode;
 	int tree_lvl = 0;
 	int max_tree_lvl = 0;
-	//RootNode *root = new RootNode(B,capacity);
+	
 	
 	
 	Node* root_node = new Node(-1,NULL);
@@ -141,23 +134,15 @@ int main(int argc, char**argv)
 	Node::dbcode = codes_db;
 	int max_lvl = 3;
 	int expansions=0;
-	//UINT8* subnroms = (UINT8*)malloc((B*2-1)*sizeof(UINT8)); //all possible norms of a binary string with B
 	printf("Started creating tree\n");
 	fflush(stdout);
 	for(UINT32 i=0;i<N;i++)
 	{
 		
-		
-		if(i==37805)
-			printf("i = %d\n",i);
 		tree_lvl = 0;
-		//printf("%d items are load\n",i);
 
 		
 		ccode = codes_db + i*B_over_8;
-		
-		//root->insert(ccode,curr_node);
-		//tree_lvl++;
 		curr_node = root_node;
 		while(true){
 			if(curr_node->isleaf) {
@@ -172,12 +157,9 @@ int main(int argc, char**argv)
 			else{
 				UINT8 subnorms[pow2(tree_lvl)];
 				norm_chunks(subnorms,tree_lvl,ccode,B_over_8);
-				//printf("here\n");
 				curr_node = curr_node->find_the_child(ccode,subnorms);
-			//	if(tree_lvl>=5)
-								//	printf("i = %d\n",i);
 			}
-			//	curr_node == root;
+			
 			tree_lvl++;
 		}
 		if(tree_lvl>max_tree_lvl)
@@ -196,13 +178,13 @@ int main(int argc, char**argv)
 	double wt = (double)(end1-start1) ;
 	printf("cput = %f, wt = %f\n",cput,wt);
 	printf("Done Loading\n");
-	//delete root_node;
+	
 	double vm = -1;
 	double rss = -1;
 	process_mem_usage(&vm, &rss);
-    vm  /= double(1024*1024);
-    rss /= double(1024*1024);
-    printf("VM %.1fgb | RSS %.1fgb\n",vm,rss);
+        vm  /= double(1024*1024);
+        rss /= double(1024*1024);
+        printf("VM %.1fgb | RSS %.1fgb\n",vm,rss);
 	printf("max tree level = %d\n",max_tree_lvl);
 	printf("expansions = %d\n",expansions);
 	printf("Done\n");
@@ -221,18 +203,9 @@ int main(int argc, char**argv)
 
 	for (UINT32 i=0; i < NQ; i++) {
 		sn->setQuery(ccodeq);
-		//printf("query is set\n");
 		ccodeq += B_over_8;
-		//UINT8* set_norm_chunks = new UINT8[(int)pow(2,max_tree_lvl+1)];
-		//printf("i = %d\n",i);
-		//hammin_radius = 0;
-		//visited_parents_list* = NULL; 
-		//printf("i = %d\n",i);
 		sn->HNN_search();
-		//if(sn->num_compare>N)
-			//printf("i = %d compare = %d\n",i,sn->num_compare);
 		total_num_comp += sn->num_compare;
-		//delete norm_chunks;
 
 	}
 
@@ -241,6 +214,7 @@ int main(int argc, char**argv)
 	cput = (double)(end0-start0) / (CLOCKS_PER_SEC) / NQ;
 	wt = (double)(end1-start1)/NQ;
 	delete sn;
+	delete root_node;
 	printf("cput = %f, wall =%f \n",cput,wt);
 	printf("Average number of comparisons = %ld\n",total_num_comp/NQ);
 	printf("Search Finished");

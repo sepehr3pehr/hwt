@@ -1,10 +1,3 @@
-/*
- * node.h
- *
- *  Created on: 2016-03-09
- *      Author: s2eghbal
- */
-
 #ifndef NODE_H_
 #define NODE_H_
 

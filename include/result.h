@@ -1,10 +1,3 @@
-/*
- * result.h
- *
- *  Created on: 2016-03-09
- *      Author: s2eghbal
- */
-
 #ifndef RESULT_H_
 #define RESULT_H_
 
@@ -29,4 +22,4 @@ struct result_t {
 
 
 
-#endif /* RESULT_H_ */
+#endif

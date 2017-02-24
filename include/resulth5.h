@@ -1,10 +1,3 @@
-/*
- * resulth5.h
- *
- *  Created on: 2016-03-09
- *      Author: s2eghbal
- */
-
 #ifndef RESULTH5_H_
 #define RESULTH5_H_
 

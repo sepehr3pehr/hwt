@@ -1,10 +1,3 @@
-/*
- * io.h
- *
- *  Created on: 2016-03-09
- *      Author: s2eghbal
- */
-
 #ifndef IO_H_
 #define IO_H_
 

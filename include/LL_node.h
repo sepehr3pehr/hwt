@@ -1,9 +1,4 @@
-/*
- * LL_node.h
- *
- *  Created on: 2016-04-28
- *      Author: s2eghbal
- */
+
 
 #ifndef LL_NODE_H_
 #define LL_NODE_H_
@@ -15,4 +10,4 @@ struct LL_node {
 
 
 
-#endif /* LL_NODE_H_ */
+#endif 

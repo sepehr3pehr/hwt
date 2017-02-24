@@ -1,0 +1,1 @@
+/usr/bin/c++   -DSINGLE_CORE -O2 -fopenmp -DNDEBUG -std=c++0x   CMakeFiles/linscan.dir/interface/linscan_interface.cpp.o CMakeFiles/linscan.dir/src/linscan.cpp.o CMakeFiles/linscan.dir/src/loadVar.cpp.o  -o linscan -rdynamic -lhdf5 

@@ -1,10 +1,3 @@
-/*
- * nodeops.h
- *
- *  Created on: 2016-03-17
- *      Author: s2eghbal
- */
-//#include <node.h>
 #include <stdlib.h>
 #include <iostream>
 #include "types.h"
@@ -35,7 +28,7 @@ UINT64 find_offset_of_child(UINT8* code,Node* curr_node, UINT8* subnorms, int B_
 }
 
 Node* find_the_child(Node* curr_node,UINT8* code,UINT8* subnorms, int B_over_8,int capacity)
-{//Should be inserted into its appropriate child
+{
 	Node* target;
 	UINT8* subsubnorms = (UINT8*) calloc(pow(2,curr_node->depth+1),sizeof(UINT8));
 	norm_chunks(subsubnorms,curr_node->depth+1,code,B_over_8);
@@ -61,16 +54,10 @@ void push_to_node(UINT8* _code, Node* curr_node, int B_over_8, UINT32 index) {
 	}
 	else{
 		UINT8* codet = _code;
-		//UINT8* ccodeset = curr_node->codeset + curr_node->size*B_over_8;
-
-	//	for (int i=0;i<B_over_8;i++)
-	//		ccodeset[i] = codet[i];
-
-		//curr_node->indexset[curr_node->size] = index;
 		curr_node->tail_list_codes->next = new LL_node;
 		curr_node->tail_list_codes = curr_node->tail_list_codes->next;
 		curr_node->tail_list_codes->index = index;
 		curr_node->size++;
 	}
 }
-#endif /* NODEOPS_H_ */
+#endif

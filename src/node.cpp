@@ -8,18 +8,6 @@
 #include <LL_node.h>
 
 UINT64 find_offset_of_child3(UINT8* subnorms,UINT8* child_pattern, int depth) {
-	/*int numsubs = two_to_d;
-	UINT64  total_offset = 0;
-	UINT64 offsets[(UINT64)two_to_d];
-
-	//norm_chunks(subsubnorms,depth+1,code,B_over_8);
-	offsets[numsubs-1] = 1;
-	for(int i=numsubs-2;i>=0;i--)
-		offsets[i] = offsets[i+1]*subnorms[i];
-
-	for(int j=0;j<two_to_d;j++)
-		total_offset += subsubnorms[2*j]*offsets[j];
-	return total_offset;*/
 	UINT64 p2d = pow2(depth);
 	UINT64 offsets[p2d];
 	UINT64 index = 0;
@@ -90,11 +78,11 @@ void Node::expand() {
 	LL_node* iterat2;
 	for(int i=0;i<size;i++){
 		code = dbcode+(UINT64)iterat->index*(UINT64)B_over_8;
-		//code = codeset+(UINT64)i*(UINT64)B_over_8;
+		
 		iterat2 = iterat;
 		iterat = iterat->next;
 
-		//printf("in expand for loop\n");
+		
 		norm_chunks(subsubnorms,depth+1,code,B_over_8);
 		total_offset = find_offset_of_child(code, subnorms);
 		sparse_hash_map<UINT64,Node*>::const_iterator got = children.find(total_offset);
@@ -108,24 +96,20 @@ void Node::expand() {
 
 		}
 		else{
-			//printf("before getting %d\n",i);
+			
 			targetchild = got->second;
-			//	printf("after getting\n");
+			
 		}
 		targetchild->push_to_node(code,iterat2->index);
-		//targetchild->insert(code, , B_over_8);
-		//printf("after\n");
 		delete iterat2;
 
 	}
-	//delete[] codeset;
-	//delete[] indexset;
 	delete[] subsubnorms;
 }
 
 
 Node* Node::find_the_child(UINT8* code,UINT8* subnorms)
-{//Should be inserted into its appropriate child
+{
 	Node* target;
 	UINT8* subsubnorms = (UINT8*) calloc(pow(2, depth+1),sizeof(UINT8));
 	norm_chunks(subsubnorms,depth+1,code,B_over_8);

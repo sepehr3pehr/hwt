@@ -1,0 +1,4 @@
+/home/s2eghbali/Documents/codes/hwt/CMakeFiles/rebuild_cache.dir
+/home/s2eghbali/Documents/codes/hwt/CMakeFiles/edit_cache.dir
+/home/s2eghbali/Documents/codes/hwt/CMakeFiles/linscan.dir
+/home/s2eghbali/Documents/codes/hwt/CMakeFiles/hwt.dir
