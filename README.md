@@ -14,4 +14,9 @@ This should create two executable files 1) *hwt*, for running the Hamming weight
 
 ### Usage
 ##### hwt
-hwt provides an implementaiton of the Hamming weight tree which supports fast Hamming nearest neighbor search as well as fast insertion of new items to the data strucutre
+`hwt` provides an implementaiton of the Hamming weight tree which supports fast Hamming nearest neighbor search as well as fast insertion of new items to the data strucutre
+
+```
+./hwt <.mat inout file> <h5 output file> -K <#neighbors> -B <length of code> -Q <#queries>
+```
+The input file should be a .mat file containing the matrix of binary codes `B` and the matrix of query point `Q`. In both matrices the columns reporsent the data points and rows represent the bits. To reduce the storage cost, each 8 bits of binary code must be compact into an unsigned char. Therefore, the number of rows is equal to (length of code)/8. 
