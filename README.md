@@ -19,4 +19,8 @@ This should create two executable files 1) *hwt*, for running the Hamming weight
 ```
 ./hwt <.mat inout file> <h5 output file> -K <#neighbors> -B <length of code> -Q <#queries>
 ```
-The input file should be a .mat file containing the matrix of binary codes `B` and the matrix of query point `Q`. In both matrices the columns reporsent the data points and rows represent the bits. To reduce the storage cost, each 8 bits of binary code must be compact into an unsigned char. Therefore, the number of rows is equal to (length of code)/8. 
+
+```
+e.g.:/hwt binary.mat out.h5 -K 10 -B 64 -Q 100
+```
+The input file should be a .mat file containing the matrix of binary codes `B` and the matrix of query points `Q`. In both matrices the columns reporsent the data points and rows represent the bits. To reduce the storage cost, each 8 bits of binary code must be compact into a byte, ranging from 0 to 255. Therefore, the number of rows is equal to (length of code)/8. `K` is the number of nearest neighbors to retreive, `B` is the legnth of code and `Q` is the number of queries.
