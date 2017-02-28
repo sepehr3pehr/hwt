@@ -28,7 +28,7 @@ The input file should be a .mat file containing the matrix of binary codes `B` a
 ##### Linear Scan
 `linscan` provides an implementation of the linear search to find the K nearest neighbors for dynamic datasets.
 ```
-./linscan  <.mat inout file> <h5 output file> -K <#neighbors> -B <length of code> -Q <#queries>
+./linscan  <.mat input file> <h5 output file> -K <#neighbors> -B <length of code> -Q <#queries>
 
 e.g.:/hwt binary.mat out.h5 -K 10 -B 64 -Q 100
 ```
