@@ -17,7 +17,7 @@ This should create two executable files 1) *hwt*, for running the Hamming weight
 `hwt` provides an implementaiton of the Hamming weight tree which supports fast Hamming nearest neighbor search as well as fast insertion of new items to the data strucutre
 
 ```
-./hwt <.mat inout file> <h5 output file> -K <#neighbors> -B <length of code> -Q <#queries> -T <capacity>
+./hwt <.mat input file> <h5 output file> -K <#neighbors> -B <length of code> -Q <#queries> -T <capacity>
 ```
 
 ```
