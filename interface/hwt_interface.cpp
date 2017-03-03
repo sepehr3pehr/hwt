@@ -20,9 +20,8 @@ int main(int argc, char**argv)
 		printf(" -N <number>          Set the number of binary codes from the beginning of the dataset file to be used\n");
 		printf(" -Q <number>          Set the number of query points to use from <infile>, default all\n");
 		printf(" -B <number>          Set the number of bits per code, default autodetect\n");
-		printf(" -m <number>          Set the number of chunks to use, default 1\n");
-		printf(" -K <number>          Set number of nearest neighbors to be retrieved\n");
-		printf(" -R <number>          Set the number of codes (in Millions) to use in computing the optimal bit reordering, default OFF (0)\n");
+		printf(" -K <number>          Set the number of nearest neighbors to be retrieved\n");
+		printf(" -T <number>          Set the maximum size of each node in the tree\n");
 		printf("\n");
 		return 0;
 	}
@@ -32,6 +31,7 @@ int main(int argc, char**argv)
 
 	UINT32 N = 0;
 	UINT32 NQ = 0, Q0 = 0, Q1 = 0;
+	int capacity = 0;
 	int B = 0;
 	int m = 1;
 	UINT32 K = -1;
@@ -62,11 +62,8 @@ int main(int argc, char**argv)
 				}
 				NQ = Q1-Q0;
 				break;
-			case 'm':
-				m = atoi(argv[++argnum]);
-				break;
-			case 'R':
-				R = atoi(argv[++argnum])*1000000;
+			case 'T':
+				capacity = atoi(argv[++argnum]);
 				break;
 			default:
 				printf("Unrecognized Option or Missing Parameter when parsing: %s\n", argv[argnum]);
@@ -120,7 +117,7 @@ int main(int argc, char**argv)
 
 	start1 = time(NULL);
 	start0 = clock();
-	int capacity = 100;
+	capacity = 100;
 	Node* curr_node;
 	UINT8* ccode;
 	int tree_lvl = 0;

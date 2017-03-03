@@ -1,1 +1,0 @@
-/usr/bin/c++   -DSINGLE_CORE -O2 -fopenmp -DNDEBUG -std=c++0x   CMakeFiles/hwt.dir/src/node.cpp.o CMakeFiles/hwt.dir/src/root_node.cpp.o CMakeFiles/hwt.dir/src/loadVar.cpp.o CMakeFiles/hwt.dir/interface/hwt_interface.cpp.o  -o hwt -rdynamic -lhdf5 
