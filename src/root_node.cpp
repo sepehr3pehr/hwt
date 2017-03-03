@@ -2,6 +2,7 @@
 #include "bitops.h"
 #include <stdlib.h>
 
+
 RootNode::RootNode(int _B, int _capacity) {
 	B = _B;
 	capacity = _capacity;
