@@ -21,7 +21,7 @@ void load_bin_codes(const char *filename, const char *varStr, UINT8 *codes, UINT
     int ndims = H5Sget_simple_extent_dims(space, dims, NULL);
     assert(ndims == 2);
 
-    hsize_t start[2] = {start0, 0};
+    hsize_t start[2] = {(long long unsigned int)start0, 0};
     hsize_t count[2];
     if (*N == 0)
 	*N = dims[0];
