@@ -186,8 +186,6 @@ void SearchNode::HNN_search() {
 
 		}
 	}
-	if(hamm_radius==0)
-		printf("zx");
 	while (true) {
 		printf("Hamming radius = %d\n",hamm_radius);
 		
