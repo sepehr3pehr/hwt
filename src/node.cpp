@@ -174,20 +174,4 @@ void Node::push_to_node(UINT8* _code, UINT32 index) {
 	}
 }
 
-//
-//UINT64 Node::findchild(UINT8* code) {
-//	UINT64  total_offset=0;
-//	UINT64 offsets[(UINT64)pow(2,depth)];
-//	UINT8* subsubnorms = (UINT8*) calloc(pow(2,depth+1),sizeof(UINT8));
-//	int numsubs = pow(2,depth);
-//	norm_chunks(subsubnorms,depth+1,code,B_over_8);
-//	offsets[numsubs-1] = 1;
-//	for(int i=numsubs-2;i>=0;i--)
-//		offsets[i] = offsets[i+1]*subnorms[i];
-//	norm_chunks(subsubnorms,depth+1,code,B_over_8);
-//	for(int j=0;j<pow(2,depth);j++)
-//		total_offset += subsubnorms[2*j]*offsets[j];
-//
-//	return total_offset;
-//}
 
