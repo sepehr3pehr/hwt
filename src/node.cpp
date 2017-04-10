@@ -140,17 +140,9 @@ UINT64 Node::find_offset_of_child(UINT8* code,UINT8* subnorms) {
 	UINT8* subsubnorms = (UINT8*) calloc(pow2(depth+1),sizeof(UINT8));
 	norm_chunks(subsubnorms,depth+1,code,B_over_8);
 
-	/*offsets[numsubs-1] = 1;
-	for(int i=numsubs-2;i>=0;i--)
-		offsets[i] = offsets[i+1]*subnorms[i];
-	norm_chunks(subsubnorms,depth+1,code,B_over_8);
-	for(int j=0;j<pow2(depth);j++)
-		total_offset += subsubnorms[2*j]*offsets[j];*/
+	
 	UINT64 temp = find_offset_of_child3(this->subnorms,subsubnorms,depth);
-	//if(depth==1) {
-	//	if(subsubnorms[0]== 6 && subsubnorms[1]== 10 && subsubnorms[2]== 10 && subsubnorms[3]== 3 && temp == 106)
-		//	printf("here");
-	//}
+	
 	temp = find_offset_of_child3(this->subnorms,subsubnorms,depth);
 	delete subsubnorms;
 	return temp;
